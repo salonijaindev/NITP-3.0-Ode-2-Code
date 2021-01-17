@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+        body
+        {   		
+    		height: 96vh;
+        }
+        .dropdown {
+		  position: relative;
+		  display: inline-block;
+		}
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #4CAF50;
+		  min-width: 160px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
+		.dropdown-content a {
+		  color: #fff;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		}
+		.dropdown-content a:hover {background-color: #ddd;}
+		.dropdown:hover .dropdown-content {display: block;}
+		.button {
+				  background-color: #4CAF50;
+				  border: none;
+				  color: white;
+				  padding: 15px 32px;
+				  text-align: center;
+				  text-decoration: none;
+				  display: inline-block;
+				  font-size: 15px;
+				  margin: 4px 2px;
+				  cursor: pointer;
+				}
+    </style>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<title>Crops Details</title>
+</head>
+<body>
+	<header>
+		<a href="#" class="logo">Ode2Code</a>
+		<div class="toggle" onclick="toggleMenu()"></div>
+		<ul class="menu">
+			<li><a href="{{ url_for('index') }}" onclick="toggleMenu()">Home</a></li>
+			<li><a href="{{ url_for('fertility') }}" onclick="toggleMenu()">Fertility Check</a></li>
+			<li><a href="{{ url_for('recommend') }}" onclick="toggleMenu()">Crops Suggestions</a></li>
+			<li><a href="{{ url_for('cinfo') }}" onclick="toggleMenu()">Crops Details</a></li>
+			<div class="dropdown">
+			  <li><a href="{{ url_for('soil') }}" onclick="toggleMenu()">Info</a></li>
+			  	<div class="dropdown-content">
+			    <a href="{{ url_for('soil') }}">Soil</a>
+			    <a href="{{ url_for('irrigation') }}">Irrigation</a>
+			    <a href="{{ url_for('fertilizers') }}">Fertilizers</a>
+			    <a href="{{ url_for('crops') }}">Crop Produce</a>
+				</div>
+			</div>
+			<li><a href="{{ url_for('about') }}" onclick="toggleMenu()">About Us</a></li>
+		</ul>
+	</header>
+	<section class="banner" style="background-attachment: fixed;">
+	<table style="margin-right:auto; margin-left:auto;margin-top: 100px;">	
+		<tr>
+			<td colspan="2"><h2 style=" text-align: center;">Confused?</h2><p style="text-align: center;">Below information about various crops might help to decide!</p></td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Rice</h3>
+				<img src="{{ url_for('static', filename='rice.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: ~ 24°C<br>Rainfall: ~150cm<br>Soil Type: Loamy/Clay<br>Major Producers: West Bengal, Uttar Pradesh, Odisha, Assam</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Wheat</h3>
+				<img src="{{ url_for('static', filename='wheat.jpg') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 17-20°C<br>Rainfall: ~75cm<br>Soil Type: Clay Loam/Sandy Loam<br>Major Producers: Uttar Pradesh, Punjab, Haryana, Bihar</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Mung Bean</h3>
+				<img src="{{ url_for('static', filename='mb.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: ~ 19°C<br>Rainfall: 60-80cm<br>Soil Type: Well-drained Loamy<br>Major Producers: West Bengal, Uttar Pradesh, Odisha, Assam</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Tea</h3>
+				<img src="{{ url_for('static', filename='tea.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: ~ 24°C<br>Rainfall: ~150cm<br>Soil Type: Loamy/Clay<br>Major Producers: Orissa, Maharashtra, Andhra Pradesh, Telangana, Rajasthan</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Millet</h3>
+				<img src="{{ url_for('static', filename='millet.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 26-29°C<br>Rainfall: 35-50cm<br>Soil Type: Alluvial/Loamy<br>Major Producers: Karnataka, Andhra Pradesh, Tamil Nadu, Kerala</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Maize</h3>
+				<img src="{{ url_for('static', filename='maize.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 18-27°C<br>Rainfall: 60-110cm<br>Soil Type: Loamy sand to Clay loam<br>Major Producers: Andhra Pradesh , Karnataka , Rajasthan , Maharashtra , Bihar </p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Lentil</h3>
+				<img src="{{ url_for('static', filename='lentil.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: ~ 30°C<br>Rainfall: 152-527cm<br>Soil Type: Sand to Clay loam<br>Major Producers: Bihar,Jharkhand,Rajasthan,Assam</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Jute</h3>
+				<img src="{{ url_for('static', filename='jute.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: ~ 25°C<br>Rainfall: 160-200cm<br>Soil Type: Clay to Sandy loam<br>Major Producers: Orissa , Bihar , Uttar Pradesh , Tripura and Meghalaya</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Coffee</h3>
+				<img src="{{ url_for('static', filename='coffee.jpg') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 23-28°C<br>Rainfall: 100-200cm<br>Soil Type: Deep Sandy Loam<br>Major Producers: Karnataka, Kerala and Tamil Nadu</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Cotton</h3>
+				<img src="{{ url_for('static', filename='cotton.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 20-32°C<br>Rainfall: 850-1100cm<br>Soil Type: Black soil<br>Major Producers: Punjab, Haryana, Rajasthan, Uttar Pradesh, Madhya Pradesh</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Ground Nut</h3>
+				<img src="{{ url_for('static', filename='gn.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 27-30°C<br>Rainfall: 600-1500cm<br>Soil Type: Sandy Loamy/Clay Loam<br>Major Producers: Andhra Pradesh , Tamil Nadu and Karnataka</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Peas</h3>
+				<img src="{{ url_for('static', filename='peas.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 20-28°F<br>Rainfall: ~500cm<br>Soil Type: Sandy Loam<br>Major Producers: Bihar, Haryana, Punjab, Orissa, and Karnataka</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Rubber</h3>
+				<img src="{{ url_for('static', filename='rubber.jpg') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 60-78°F<br>Rainfall: ~200cm<br>Soil Type: Loamy soil<br>Major Producers: Kerala and Kanyakumari</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Sugarcane</h3>
+				<img src="{{ url_for('static', filename='sc.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 20-26°C<br>Rainfall: ~150cm<br>Soil Type: Alluvial soil<br>Major Producers: Maharashtra, Karnataka, Tamil Nadu, Andhra Pradesh</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Tobacco</h3>
+				<img src="{{ url_for('static', filename='tobacco.jpg') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 80°F<br>Rainfall: 50-100cm<br>Soil Type: Alluvial/Black soil<br>Major Producers: Andhra Pradesh, Gujarat, Karnataka and Maharashtra</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Kidney Beans</h3>
+				<img src="{{ url_for('static', filename='kb.jpg') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 15-25°C<br>Rainfall: 60-150cm<br>Soil Type: Heavy Clay soil<br>Major Producers: Himachal Pradesh, Jammu and Kashmir, Kerala, Karnataka</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Moth Beans</h3>
+				<img src="{{ url_for('static', filename='moth.jpg') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 24-32°C<br>Rainfall: 500-750cm<br>Soil Type: Well-drained soil<br>Major Producers: Rajasthan, Gujrat</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Coconut</h3>
+				<img src="{{ url_for('static', filename='coconut.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: ~ 27°C<br>Rainfall: ~100cm<br>Soil Type: Alluvial/Red soil<br>Major Producers: Kerala, Tamilnadu, Karnataka, Andhra Pradesh, Orissa, Goa</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Black Gram</h3>
+				<img src="{{ url_for('static', filename='blackgram.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 25-35°C<br>Rainfall: 60-75cm<br>Soil Type: Heavy Cotton Soil<br>Major Producers: Andhra Pradesh, Maharashtra and Madhya Pradesh</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Adzuki Beans</h3>
+				<img src="{{ url_for('static', filename='ab.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 60-90°F<br>Soil Type: Clay/Silt loams</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Pigeon Peas</h3>
+				<img src="{{ url_for('static', filename='pp.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 15-18°C<br>Rainfall: 600-1400cm<br>Soil Type: Sandy Loam<br>Major Producers: Andhra Pradesh, Gujarat, Karnataka, Madhya Pradesh</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Chick Pea</h3>
+				<img src="{{ url_for('static', filename='cp.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 15-35°C<br>Rainfall: 60-90cm<br>Soil Type: Fertile Sandy soil<br>Major Producers: Madhya Pradesh,Uttar Pradesh, Rajasthan, Maharashtra,  Andhra Pradesh</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Banana</h3>
+				<img src="{{ url_for('static', filename='banana.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 20-21°C<br>Rainfall: ~170cm<br>Soil Type: Well-drained soil<br>Major Producers: Tamil Nadu,Gujarat,Maharashtra,Andhra Pradesh,Karnataka,Bihar</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Grapes</h3>
+				<img src="{{ url_for('static', filename='grapes.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 10-40°C<br>Rainfall: 200-250cm<br>Soil Type: Red Sandy soil<br>Major Producers: Maharashtra, Karnataka, Tamil Nadu, Andhra Pradesh</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Apple</h3>
+				<img src="{{ url_for('static', filename='apple.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 21-24°C<br>Rainfall: 100-125cm<br>Soil Type: Loamy soil<br>Major Producers: Jammu & Kashmir, Himachal Pradesh, Uttaranchal and Arunachal Pradesh</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Mango</h3>
+				<img src="{{ url_for('static', filename='mango.jpg') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 27-36°C<br>Rainfall: 25-250cm<br>Soil Type: Red/Loamy soil<br>Major Producers: Andhra Pradesh, Uttar Pradesh, Karnataka, Bihar, Gujarat and Tamil Nadu</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Muskmelon</h3>
+				<img src="{{ url_for('static', filename='mm.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 25-35°C<br>Soil Type: Sandy/Sandy loam soil<br>Major Producers: Uttar Pradesh,Andhra Pradesh,Madhya Pradesh,Punjab</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Orange</h3>
+				<img src="{{ url_for('static', filename='orange.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 10-35°C<br>Rainfall: 50-75cm<br>Soil Type: Alluvial/Clay loam<br>Major Producers: Assam, Rajasthan, Mizoram, Meghalaya, Nagaland and Karnataka</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Papaya</h3>
+				<img src="{{ url_for('static', filename='papaya.jpg') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 22-36°C<br>Rainfall: 35-250cm<br>Soil Type: Well-drained soil<br>Major Producers: Andhra Pradesh, Karnataka, Gujarat, Orissa, West Bengal</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Pomegranate</h3>
+				<img src="{{ url_for('static', filename='pom.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 45-48°C<br>Rainfall: 50-100cm<br>Soil Type: Loamy<br>Major Producers: Maharashtra, Karnataka, Gujrat, Tamil Nadu</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h3>Watermelon</h3>
+				<img src="{{ url_for('static', filename='wm.png') }}" style="width: 300px; height: 200px;">
+			</td>
+			<td>
+				<p style="margin-left: 30px;">Temperature: 70-80°F<br>Soil Type: Loamy<br>Major Producers: Uttar Pradesh,Andhra Pradesh,Karnataka,West Bengal</p>
+			</td>
+		</tr>
+	</table>
+
+	</section>
+
+	<div class="copyright">
+		<p>Copyright © Team Ode2Code. All Rights Reserved.</p>
+	</div>
+	<script type="text/javascript">
+		window.addEventListener('scroll',function(){
+			var header = document.querySelector('header');
+			header.classList.toggle('sticky',window.scrollY > 0)
+		});
+		function toggleMenu(){
+			var menuToggle = document.querySelector('.toggle');
+			var menu = document.querySelector('.menu');
+			menuToggle.classList.toggle('active');
+			menu.classList.toggle('active');
+		}
+	</script>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

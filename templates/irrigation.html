@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+        body
+        {   		
+    		height: 96vh;
+        }
+        .dropdown {
+		  position: relative;
+		  display: inline-block;
+		}
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #4CAF50;
+		  min-width: 160px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
+		.dropdown-content a {
+		  color: #fff;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		}
+		.dropdown-content a:hover {background-color: #ddd;}
+		.dropdown:hover .dropdown-content {display: block;}
+    </style>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+	<title>Info</title>
+
+</head>
+<body>
+	<header>
+		<a href="#" class="logo">Ode2Code</a>
+		<div class="toggle" onclick="toggleMenu()"></div>
+		<ul class="menu">
+			<li><a href="{{ url_for('index') }}" onclick="toggleMenu()">Home</a></li>
+			<li><a href="{{ url_for('fertility') }}" onclick="toggleMenu()">Fertility Check</a></li>
+			<li><a href="{{ url_for('recommend') }}" onclick="toggleMenu()">Crops Suggestions</a></li>
+			  <li><a href="{{ url_for('cinfo') }}" onclick="toggleMenu()">Crops Details</a></li>
+			<div class="dropdown">
+			  <li><a href="{{ url_for('soil') }}" onclick="toggleMenu()">Info</a></li>
+			  	<div class="dropdown-content">
+			    <a href="{{ url_for('soil') }}">Soil</a>
+			    <a href="{{ url_for('irrigation') }}">Irrigation</a>
+			    <a href="{{ url_for('fertilizers') }}">Fertilizers</a>
+			    <a href="{{ url_for('crops') }}">Crop Produce</a>
+				</div>
+			</div>
+			<li><a href="{{ url_for('about') }}" onclick="toggleMenu()">About Us</a></li>
+		</ul>
+	</header>
+      <div class="card" style="margin-top:120px;">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs" >
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('soil') }}">Soil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active"  href="{{ url_for('irrigation') }}">Irrigation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="{{ url_for('fertilizers') }}">Fertilizers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('crops') }}">Crop Produce</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body bg">
+           <div class="tab-content mt-3">
+            <div class="tab-pane active">
+              <p class="card-text font-weight-bolder">Among the agricultural inputs which include seeds, fertiliser, plant protection, machinery and credit, irrigation assumes an importance place. <br>Irrigation means watering the fields by any means other than rain.<br><br>In areas where rain doesn’t come regularly or when growing water-hungry crops, farmers are forced to get creative.<br>Irrigation uses groundwater, surface water, and water delivered directly to farms to hydrate thirsty plants.<br><br>
+            Irrigation is important to a country like India because rainfall here is seasonal in nature. It is limited to four months of a year.<br> It is also important because some crops require more water than what it is provided by the rainfall, therefore we have to depend on irrigation.<br><br>
+			Evapotranspiration and wind are issues farmers face when trying to get water to plants while avoiding waste.<br> General access to water and a diminished supply are also struggles for farmers in many parts of the country.<br><br>
+			Nutrients may also be provided to the crops through irrigation. The various sources of water for irrigation are wells, ponds, lakes,<br> canals, tube-wells and even dams.<br> Irrigation offers moisture required for growth and development, germination and other related functions.<br><br>
+			The frequency, rate, amount and time of irrigation are different for different crops and also vary according to the types of soil and seasons.<br>For example, summer crops require a higher amount of water as compared to winter crops.<br><br>The farmers should be acquainted with the type of soil moisture, quality of irrigation water, frequency of irrigation for the<br> proper implementation of irrigation systems.<br><br>Modern irrigation methods are efficient enough to supply the entire field uniformly with water, so that each plant has the amount of water<br> it needs, neither too much nor too little.<br><br>Irrigation schemes also involve solving numerous engineering and economic problems while minimizing negative environmental consequences.</p>
+            </div>
+          </div>
+      </div>
+  </div>
+	<section class="row font-weight-bolder">
+
+		<div class="col-lg-4 col-md-6 col-12 py-5">
+			<img src="{{ url_for('static', filename='irri.png') }}">
+		</div>
+
+
+		<div class="col-lg-8 col-md-6 col-12 py-5">
+			<h2>5 Most Adapted Irrigation Methods</h2>
+			<table class="table table-hover">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Methods</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <th scope="row">1</th>
+			      <td>| Wells</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">2</th>
+			      <td>| Tubewells</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">3</th>
+			      <td>| Canals </td>
+			    </tr>
+			    <tr>
+			      <th scope="row">4</th>
+			      <td>| River lift system</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">5</th>
+			      <td>| Tanks</td>
+			    </tr>
+			  </tbody>
+			</table>
+			
+			<h2 class="my-4">5 Best Irrigation Systems to Boost Soil Fertility</h2>
+			<table class="table table-hover">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">System</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <th scope="row">1</th>
+			      <td>Drip Irrigation</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">2</th>
+			      <td>Surface Irrigation</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">3</th>
+			      <td>Sprinkler Irrigation</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">4</th>
+			      <td>Center Pivot Irrigation</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">5</th>
+			      <td>Sub Irrigation</td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+		
+	</section>
+
+	<div class="copyright">
+		<p>Copyright © Team Ode2Code. All Rights Reserved.</p>
+	</div>
+	<script type="text/javascript">
+		window.addEventListener('scroll',function(){
+			var header = document.querySelector('header');
+			header.classList.toggle('sticky',window.scrollY > 0)
+		});
+		function toggleMenu(){
+			var menuToggle = document.querySelector('.toggle');
+			var menu = document.querySelector('.menu');
+			menuToggle.classList.toggle('active');
+			menu.classList.toggle('active');
+		}
+	</script>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

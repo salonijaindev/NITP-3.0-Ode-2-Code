@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	font-family: 'Open Sans', sans-serif;
+}
+header
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 40px 100px;
+	z-index: 1000;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: 0.5s;
+	background: #f9ed69; 
+}
+header.sticky
+{
+	background: #f9ed69;
+	padding: 20px 100px;
+	box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+header .logo
+{
+	color: #ca6924;
+	font-size: 24px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+header.sticky .logo
+{
+	color: #000;
+}
+header ul
+{
+	position: relative;
+	display: flex;
+}
+header ul li
+{
+	position: relative;
+	list-style: none;
+}
+header ul li a
+{
+	position: relative;
+	display: inline-block;
+	margin: 0 15px;
+	color: #6d9a79;
+	font-size: 20px;
+	text-decoration: none;
+	font-weight: bold; 
+}
+header.sticky ul li a
+{
+	color: #ca6924;
+
+}
+.bg{
+
+	background-image: url("bg2.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+section
+{
+	padding: 100px;
+}
+.banner
+{
+	position: relative;
+	min-height: 100vh;
+	background-image: url('../static/bg.png');
+	background-size: cover;
+	background-position: right;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #FFFFFF;
+}
+.banner h2
+{
+	text-align: center;
+	font-size: 3em;
+	color: #ca6924;
+	text-shadow: 2px 2px #000000;
+	font-weight: 500;
+	line-height: 1.5em;
+}
+.banner p{
+	font-weight: bolder;
+	font-size: 26px;
+	color: #FFFFFF;
+}
+.copyright
+{
+	background: #292b2c;
+	color: #fff;
+	text-align: center;
+	padding: 10px;
+}
+
+.wrapper-1 h1{
+	font-family: 'Allura', cursive;
+	font-size: 52px;
+	margin-bottom: 60px;
+	text-align: center;
+}
+.team{
+	display: flex;
+	text-align: center;
+	width: auto;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.team .team_member{
+	background: #fff;
+	margin: 5px;
+	margin-bottom: 50px;
+	width: 300px;
+	padding: 20px;
+	line-height: 20px;
+	color: #8e8b8b;
+	position: relative;
+}
+.team .team_member h3{
+	color: #81c644;
+	font-size: 26px;
+	margin-top: 50px;
+}
+.team .team_member p.role{
+	color: #ccc;
+	font-size: 12px;
+	font-weight: 800;
+	text-transform: uppercase;
+	margin: 12px 0;
+}
+
+.team .team_member .team_img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	position: absolute;
+	top: -50px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: #fff;
+}
+.team .team_member .team_img img{
+	width: 100px;
+	height: 100px;
+	padding: 10px;
+	border-radius: 50%;
+}

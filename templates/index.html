@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 30px;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+
+.content {
+  position: fixed;
+  top: 170px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+#myBtn {
+  width: 200px;
+  font-size: 20px;
+  padding: 10px;
+  border: none;
+  background: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+.copyright
+{
+  background: #292b2c;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+</style>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	
+	<title>Ode2Code Agro</title>
+</head>
+<body>
+
+	<video autoplay muted loop id="myVideo">
+	  <source src="{{ url_for('static', filename='vid.mp4') }}" type="video/mp4">
+  		Your browser does not support HTML5 video.
+	</video>
+	<div class="content">
+	  <h1>Ode2Code Agro</h1>
+	  <p>Sustainable agricultural practices are intended to protect the environment, <br>expand the Earth’s natural resource base, and maintain and improve soil fertility.</p>
+	  <a href="{{ url_for('fertility') }}"><button id="myBtn">Fertility Check</button></a>
+	  <a href="{{ url_for('recommend') }}"><button id="myBtn">Crop Suggestions</button></a>
+	  <a href="{{ url_for('cinfo') }}"><button id="myBtn">Crop Details</button></a>
+	</div>
+
+	<div class="copyright">
+		<p>Copyright © Team Ode2Code. All Rights Reserved.</p>
+	</div>
+
+</body>
+</html>

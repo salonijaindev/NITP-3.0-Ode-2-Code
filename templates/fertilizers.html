@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+        body
+        {   		
+    		height: 96vh;
+        }
+        .dropdown {
+		  position: relative;
+		  display: inline-block;
+		}
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #4CAF50;
+		  min-width: 160px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
+		.dropdown-content a {
+		  color: #fff;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		}
+		.dropdown-content a:hover {background-color: #ddd;}
+		.dropdown:hover .dropdown-content {display: block;}
+    </style>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+	<title>Info</title>
+
+</head>
+<body>
+	<header>
+		<a href="#" class="logo">Ode2Code</a>
+		<div class="toggle" onclick="toggleMenu()"></div>
+		<ul class="menu">
+			<li><a href="{{ url_for('index') }}" onclick="toggleMenu()">Home</a></li>
+			<li><a href="{{ url_for('fertility') }}" onclick="toggleMenu()">Fertility Check</a></li>
+			<li><a href="{{ url_for('recommend') }}" onclick="toggleMenu()">Crops Suggestions</a></li>
+			<li><a href="{{ url_for('cinfo') }}" onclick="toggleMenu()">Crops Details</a></li>
+			<div class="dropdown">
+			  <li><a href="{{ url_for('soil') }}" onclick="toggleMenu()">Info</a></li>
+			  	<div class="dropdown-content">
+			    <a href="{{ url_for('soil') }}">Soil</a>
+			    <a href="{{ url_for('irrigation') }}">Irrigation</a>
+			    <a href="{{ url_for('fertilizers') }}">Fertilizers</a>
+			    <a href="{{ url_for('crops') }}">Crop Produce</a>
+				</div>
+			</div>
+			<li><a href="{{ url_for('about') }}" onclick="toggleMenu()">About Us</a></li>
+		</ul>
+	</header>
+      <div class="card" style="margin-top:120px;">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs" >
+            <li class="nav-item">
+              <a class="nav-link " href="{{ url_for('soil') }}">Soil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="{{ url_for('irrigation') }}">Irrigation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active"  href="{{ url_for('fertilizers') }}">Fertilizers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('crops') }}">Crop Produce</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body bg">
+           <div class="tab-content mt-3">
+            <div class="tab-pane active">
+              <p class="card-text font-weight-bolder">Fertilizers are chemical substances supplied to the crops to increase their productivity. These are used by the farmers daily to increase the crop yield.<br>The fertilizers contain the essential nutrients required by the plants, including nitrogen, potassium, and phosphorus.<br>They enhance the water retention capacity of the soil and also increase its fertility.<br><br>Loss of soil fertility, pests, and lack of nutrients has resulted in a decrease in agricultural production. This has increased the importance of fertilizers in agriculture.<br><br>
+              	Fertilizers are used for various purposes. The uses of fertilizers are mentioned below:<br>
+
+				+ They are used to providing additional nutrients to the plants.<br>
+
+				+ They are added to improve the yield of the crops.<br>
+
+				+ Nitrogen-rich fertilizers are used for the greening of lawns.<br>
+
+				+ Organic fertilizers improve the texture and fertility of the soil.<br>
+
+				+ Gardeners use fertilizers to address certain needs of the plants such as nutritional needs.<br>
+
+				+ Fertilizers are added to potted plants to replace the lost nutrients.<br><br>
+
+				Fertilizers can be important to the plants in the following ways:<br>
+
+				* Fertilizers increase plants’ tolerance towards pests. This has reduced their reliance on insecticides and herbicides, <br> thereby, producing healthier crops.Consequently, diseases have reduced, providing aesthetic value to the crops.<br>
+
+				* Fertilizers improve the water holding capacity of the plants and increase root depth.<br>
+
+				* The potassium content present in the fertilizers strengthens the straws and stalks of the plants.<br>
+
+				* The phosphorus present in the fertilizers helps in the faster development of roots and formation of seeds in the plants.<br>
+
+				* Nitrogen in the fertilizers enhances the growth of the plants which can be characterized by the green colour of the plants.<br><br>
+				Since the chemical fertilizers adversely affect soil fertility, biofertilizers were brought into use. These are substances that <br>contain living or latent cells, and even micro-organisms. They provide the soil with the necessary nutrients and microbes <br>for the growth of the plants. They help the soil to retain its fertility. They are environment-friendly and also destroy pathogenic <br>components responsible for causing disease in plants. Acetobacter and Rhizobium are two such widely used biofertilizers. </p>
+            </div>
+          </div>
+      </div>
+  </div>
+	<section class="row font-weight-bolder">
+
+		<div class="col-lg-4 col-md-6 col-12 py-5">
+			<img src="{{ url_for('static', filename='ferti.png') }}">
+		</div>
+
+
+		<div class="col-lg-8 col-md-6 col-12 py-5">
+			<h2>5 Inorganic Fertilizers</h2>
+			<table class="table table-hover">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Types</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <th scope="row">1</th>
+			      <td>| Nitrogen Fertilizer</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">2</th>
+			      <td>| Phosphorus Fertilizer</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">3</th>
+			      <td>| Urea</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">4</th>
+			      <td>| Anhydrous Ammonia</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">5</th>
+			      <td>| Potassium Chloride</td>
+			    </tr>
+			  </tbody>
+			</table>
+			
+			<h2 class="my-4">5 Organic Fertilizers</h2>
+			<table class="table table-hover">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Type</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <th scope="row">1</th>
+			      <td>Livestock Manure</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">2</th>
+			      <td>Agricultural Waste</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">3</th>
+			      <td>Green Sand</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">4</th>
+			      <td>Bone Meal</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">5</th>
+			      <td>Fish Meal</td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+		
+	</section>
+
+	<div class="copyright">
+		<p>Copyright © Team Ode2Code. All Rights Reserved.</p>
+	</div>
+	<script type="text/javascript">
+		window.addEventListener('scroll',function(){
+			var header = document.querySelector('header');
+			header.classList.toggle('sticky',window.scrollY > 0)
+		});
+		function toggleMenu(){
+			var menuToggle = document.querySelector('.toggle');
+			var menu = document.querySelector('.menu');
+			menuToggle.classList.toggle('active');
+			menu.classList.toggle('active');
+		}
+	</script>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

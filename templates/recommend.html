@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+        body
+        {   		
+    		height: 96vh;
+        }
+        .dropdown {
+		  position: relative;
+		  display: inline-block;
+		}
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #4CAF50;
+		  min-width: 160px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
+		.dropdown-content a {
+		  color: #fff;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		}
+		.dropdown-content a:hover {background-color: #ddd;}
+		.dropdown:hover .dropdown-content {display: block;}
+		.button {
+				  background-color: #4CAF50;
+				  border: none;
+				  color: white;
+				  padding: 15px 32px;
+				  text-align: center;
+				  text-decoration: none;
+				  display: inline-block;
+				  font-size: 15px;
+				  margin: 4px 2px;
+				  cursor: pointer;
+				}
+    </style>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+	<title>Crop Suggestions</title>
+</head>
+<body>
+	<header>
+		<a href="#" class="logo">Ode2Code</a>
+		<div class="toggle" onclick="toggleMenu()"></div>
+		<ul class="menu">
+			<li><a href="{{ url_for('index') }}" onclick="toggleMenu()">Home</a></li>
+			<li><a href="{{ url_for('fertility') }}" onclick="toggleMenu()">Fertility Check</a></li>
+			<li><a href="{{ url_for('recommend') }}" onclick="toggleMenu()">Crops Suggestions</a></li>
+			  <li><a href="{{ url_for('cinfo') }}" onclick="toggleMenu()">Crops Details</a></li>
+			<div class="dropdown">
+			  <li><a href="{{ url_for('soil') }}" onclick="toggleMenu()">Info</a></li>
+			  	<div class="dropdown-content">
+			    <a href="{{ url_for('soil') }}">Soil</a>
+			    <a href="{{ url_for('irrigation') }}">Irrigation</a>
+			    <a href="{{ url_for('fertilizers') }}">Fertilizers</a>
+			    <a href="{{ url_for('crops') }}">Crop Produce</a>
+				</div>
+			</div>
+			<li><a href="{{ url_for('about') }}" onclick="toggleMenu()">About Us</a></li>
+		</ul>
+	</header>
+	<section class="banner">
+    <table style="margin-right:auto; margin-left:auto;margin-top: 100px;">
+        <tr>
+            <td>
+                <h2 style="margin-top:-300px; text-align: center;"><br><br>Which crop should I grow?</h2>
+                <p style="text-align: center;"> Get a crop recommendation with just 4 inputs!</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form action="." method="post">
+          		<input type="text" name="pH" placeholder="pH value">
+          		<input type="text" name="ec" placeholder="Rainfall">
+          		<input type="text" name="N" placeholder="Temperature">
+          		<input type="text" name="P" placeholder="Humidity">
+          		<input class="button" type="button" value="Recommend">
+        </form>
+            </td>
+        </tr>
+    </table>
+	</section>
+
+	<div class="copyright">
+		<p>Copyright © Team Ode2Code. All Rights Reserved.</p>
+	</div>
+	<script type="text/javascript">
+		window.addEventListener('scroll',function(){
+			var header = document.querySelector('header');
+			header.classList.toggle('sticky',window.scrollY > 0)
+		});
+		function toggleMenu(){
+			var menuToggle = document.querySelector('.toggle');
+			var menu = document.querySelector('.menu');
+			menuToggle.classList.toggle('active');
+			menu.classList.toggle('active');
+		}
+	</script>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

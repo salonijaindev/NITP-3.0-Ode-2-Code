@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+        body
+        {   		
+    		height: 96vh;
+        }
+        .dropdown {
+		  position: relative;
+		  display: inline-block;
+		}
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #4CAF50;
+		  min-width: 160px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
+		.dropdown-content a {
+		  color: #fff;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		}
+		.dropdown-content a:hover {background-color: #ddd;}
+		.dropdown:hover .dropdown-content {display: block;}
+    </style>
+	<title>About Us</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+	<header>
+		<a href="#" class="logo">Ode2Code</a>
+		<div class="toggle" onclick="toggleMenu()"></div>
+		<ul class="menu">
+			<li><a href="{{ url_for('index') }}" onclick="toggleMenu()">Home</a></li>
+			<li><a href="{{ url_for('fertility') }}" onclick="toggleMenu()">Fertility Check</a></li>
+			<li><a href="{{ url_for('recommend') }}" onclick="toggleMenu()">Crops Suggestions</a></li>
+			<li><a href="{{ url_for('cinfo') }}" onclick="toggleMenu()">Crops Details</a></li>
+			<div class="dropdown">
+			  <li><a href="{{ url_for('soil') }}" onclick="toggleMenu()">Info</a></li>
+			  	<div class="dropdown-content">
+			    <a href="{{ url_for('soil') }}">Soil</a>
+			    <a href="{{ url_for('irrigation') }}">Irrigation</a>
+			    <a href="{{ url_for('fertilizers') }}">Fertilizers</a>
+			    <a href="{{ url_for('crops') }}">Crop Produce</a>
+				</div>
+			</div>
+			<li><a href="{{ url_for('about') }}" onclick="toggleMenu()">About Us</a></li>
+		</ul>
+	</header>
+
+	<section class="banner">
+		<table style="margin-top:200px; margin-left:30px;">
+        <tr>
+            <td>
+                <h2 style="margin-top:-300px; text-align: center;"><br><br>About Us</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+			<p style="text-shadow: 1px 1px #fff;">This project is designed as a soil-management tool for farmers, homeowners, landscape contractors, golf-course superintendents, ornamental nurserymen and others interested in the fertility of their soil.<br>
+			Each request is analyzed for pH, EC, Nitrogen, Phosphorus and Potassium contents as input. The final report includes the chemical analysis of the soil determining whether or not the soil is fertile for plantation.<br><br>
+			The designed web-app also has a crop recommendation system which is aimed to suggest the possible crops that can be grown in soil depending upon some input parameters, namely pH, rainfall, humidity and temperature.<br>
+			The team has also tried to put in important information like irrigation requirements, best time sow, best soil type, etc about various crops commonly grown by farmers in India.</p>
+            </td>
+        </tr>
+    </table>
+	</section>
+
+	<div style="text-align: center; padding: 20px;" class="row">
+		<div class="col-lg-4 col-md-4 col-12">
+			
+		<h2>Tech Process</h2>
+		<h4>Step 1: Data Collection and Data Transformation</h4>
+		<h4>Step 2: Model Building</h4>
+		<h4>Step 3: Web and UI/UX Designing</h4>
+		<h4>Step 4: App Deployment</h4>
+
+		</div>
+
+		<div class="col-lg-4 col-md-4 col-12">
+			
+			<img src="{{ url_for('static', filename='logo.jpeg') }}" style="width:270px; height:270px;">
+
+		</div>
+
+		<div class="col-lg-4 col-md-4 col-12">
+			<h2>Tech Stack</h2>
+			<h4>Python, Flask</h4>
+			<h4>HTML, CSS, BootStrap, JavaScript</h4>
+			<h4>Adobe XD</h4>
+			<h4>GitHub, Heroku</h4>
+		</div>
+	</div>
+
+	<div class="wrapper-1">
+		<h1>Our Team</h1>
+		<div class="team">
+				<div class="team_member">
+					<div class="team_img">
+						<img src="{{ url_for('static', filename='team2.jpeg') }}" alt="team_member_image">
+					</div>
+					<h3>Varun Sakunia</h3>
+					<p class="role">AL&ML Developer</p>
+				</div>
+				<div class="team_member">
+					<div class="team_img">
+						<img src="{{ url_for('static', filename='team3.jpg') }}" alt="team_member_image">
+					</div>
+					<h3>Saloni Jain</h3>
+					<p class="role">Full-Stack Developer</p>
+				</div>
+				<div class="team_member">
+					<div class="team_img">
+						<img src="{{ url_for('static', filename='team1.jpeg') }}" alt="team_member_image">
+					</div>
+					<h3>Mudit Kumar Jain</h3>
+					<p class="role">Front-End Developer</p>
+				</div>
+				<div class="team_member">
+					<div class="team_img">
+						<img src="{{ url_for('static', filename='team4.jpeg') }}" alt="team_member_image">
+					</div>
+					<h3>Sai Satyaprakash Nayak</h3>
+					<p class="role">UI/UX Developer</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="copyright">
+			<p>Copyright © Team Ode2Code. All Rights Reserved.</p>
+		</div>
+	<script type="text/javascript">
+		window.addEventListener('scroll',function(){
+			var header = document.querySelector('header');
+			header.classList.toggle('sticky',window.scrollY > 0)
+		});
+		function toggleMenu(){
+			var menuToggle = document.querySelector('.toggle');
+			var menu = document.querySelector('.menu');
+			menuToggle.classList.toggle('active');
+			menu.classList.toggle('active');
+		}
+	</script>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

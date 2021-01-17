@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+        body
+        {   		
+    		height: 96vh;
+        }
+        .dropdown {
+		  position: relative;
+		  display: inline-block;
+		}
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #4CAF50;
+		  min-width: 160px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
+		.dropdown-content a {
+		  color: #fff;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		}
+		.dropdown-content a:hover {background-color: #ddd;}
+		.dropdown:hover .dropdown-content {display: block;}
+    </style>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+	<title>Info</title>
+
+</head>
+<body>
+	<header>
+		<a href="#" class="logo">Ode2Code</a>
+		<div class="toggle" onclick="toggleMenu()"></div>
+		<ul class="menu">
+			<li><a href="{{ url_for('index') }}" onclick="toggleMenu()">Home</a></li>
+			<li><a href="{{ url_for('fertility') }}" onclick="toggleMenu()">Fertility Check</a></li>
+			<li><a href="{{ url_for('recommend') }}" onclick="toggleMenu()">Crops Suggestions</a></li>
+			  <li><a href="{{ url_for('cinfo') }}" onclick="toggleMenu()">Crops Details</a></li>
+			<div class="dropdown">
+			  <li><a href="{{ url_for('soil') }}" onclick="toggleMenu()">Info</a></li>
+			  	<div class="dropdown-content">
+			    <a href="{{ url_for('soil') }}">Soil</a>
+			    <a href="{{ url_for('irrigation') }}">Irrigation</a>
+			    <a href="{{ url_for('fertilizers') }}">Fertilizers</a>
+			    <a href="{{ url_for('crops') }}">Crop Produce</a>
+				</div>
+			</div>
+			<li><a href="{{ url_for('about') }}" onclick="toggleMenu()">About Us</a></li>
+		</ul>
+	</header>
+      <div class="card" style="margin-top:120px;">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs" >
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ url_for('soil') }}">Soil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="{{ url_for('irrigation') }}">Irrigation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="{{ url_for('fertilizers') }}">Fertilizers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('crops') }}">Crop Produce</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body bg">
+           <div class="tab-content mt-3">
+            <div class="tab-pane active">
+              <p class="card-text font-weight-bolder">Arable land is the term applied to soils that are suitable for agriculture.The soils considered best for agriculture have many of the following properties.<br>
+			They: <br>
+		•	 allow both water and air to move through and get to roots, <br>
+		•	 have a diverse population of microorganisms,<br>
+		•	 are dark in color because they contain a lot of organic matter (dead plants and animals), and<br>
+		•	 they contain an abundance of readily available nutrients.<br><br>
+		The amount of arable land is not increasing. Some is being lost to soil degradation caused by salt build-up, desertification,<br>erosion, chemical spills, and so on. Other lands are being covered up by buildings and roads. As Earth’s population increases,<br> it is important to maintain as much land as possible to produce more food. Understanding and conserving soil are critical to this effort.<br><br>
+		As the first land users, farmers were also the first land stewards. Farmers use many practices to make sure they are taking good care of the soil <br>and the surrounding environment.<br><br>
+		These include:<br>
+		•	 monitoring levels of nutrients in the soil,<br>
+		•	 using precision agriculture practices to apply nutrients and water only where they are needed,<br>
+		•	 using precision agriculture to grow more crops on the best soil and allow more rest for the weaker soil,<br>
+		•	 rotating crops to improve diversity,<br>
+		•	 not driving in fields when the soil is too wet,<br>
+		•	 not disturbing the soil too much (disturbance makes erosion easier and increases the rate at which
+		microorganism lose their food supply),<br>
+		•	 keeping the surface covered to reduce erosion, and<br>
+		•	 monitoring watering so that salts do not accumulate.<br><br>
+		Healthy soil results in a more stable food supply, which results in a strong community. Farmers use many practices and technologies, <br>including precise applications of fertilizer and irrigation, to ensure that soil is conserved for sustainable food production. </p>
+            </div>
+          </div>
+      </div>
+  </div>
+	<section class="row font-weight-bolder bg2">
+
+		<div class="col-lg-4 col-md-6 col-12 py-5 px-5 my-5">
+			<img src="{{ url_for('static', filename='soil.jpg') }}">
+		</div>
+
+
+		<div class="col-lg-8 col-md-6 col-12 py-5">
+			<h2>5 Important Soil Parameters</h2>
+			<table class="table table-hover">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Parameters</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <th scope="row">1</th>
+			      <td>| pH (Power of Hydrogen)</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">2</th>
+			      <td>| EC (Electrical conductivity)</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">3</th>
+			      <td>| N  (Nitrogen)</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">4</th>
+			      <td>| P  (hosphorus)</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">5</th>
+			      <td>| K  (Potassium)</td>
+			    </tr>
+			  </tbody>
+			</table>
+			
+			<h2 class="my-4">5 Ways to Boost Soil Fertility</h2>
+			<table class="table table-hover">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Sources</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <th scope="row">1</th>
+			      <td>Manure</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">2</th>
+			      <td>Lime and Gysum</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">3</th>
+			      <td>Granite Dust</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">4</th>
+			      <td>Collidal Phosphate</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">5</th>
+			      <td>Fish Emulsion</td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+		
+	</section>
+
+	<div class="copyright">
+		<p>Copyright © Team Ode2Code. All Rights Reserved.</p>
+	</div>
+	<script type="text/javascript">
+		window.addEventListener('scroll',function(){
+			var header = document.querySelector('header');
+			header.classList.toggle('sticky',window.scrollY > 0)
+		});
+		function toggleMenu(){
+			var menuToggle = document.querySelector('.toggle');
+			var menu = document.querySelector('.menu');
+			menuToggle.classList.toggle('active');
+			menu.classList.toggle('active');
+		}
+	</script>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

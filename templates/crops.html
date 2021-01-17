@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+        body
+        {   		
+    		height: 96vh;
+        }
+        .dropdown {
+		  position: relative;
+		  display: inline-block;
+		}
+		.dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #4CAF50;
+		  min-width: 160px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
+		.dropdown-content a {
+		  color: #fff;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		}
+		.dropdown-content a:hover {background-color: #ddd;}
+		.dropdown:hover .dropdown-content {display: block;}
+    </style>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+	<title>Info</title>
+
+</head>
+<body>
+	<header>
+		<a href="#" class="logo">Ode2Code</a>
+		<div class="toggle" onclick="toggleMenu()"></div>
+		<ul class="menu">
+			<li><a href="{{ url_for('index') }}" onclick="toggleMenu()">Home</a></li>
+			<li><a href="{{ url_for('fertility') }}" onclick="toggleMenu()">Fertility Check</a></li>
+			<li><a href="{{ url_for('recommend') }}" onclick="toggleMenu()">Crops Suggestions</a></li>
+			  <li><a href="{{ url_for('cinfo') }}" onclick="toggleMenu()">Crops Details</a></li>
+			<div class="dropdown">
+			  <li><a href="{{ url_for('soil') }}" onclick="toggleMenu()">Info</a></li>
+			  	<div class="dropdown-content">
+			    <a href="{{ url_for('soil') }}">Soil</a>
+			    <a href="{{ url_for('irrigation') }}">Irrigation</a>
+			    <a href="{{ url_for('fertilizers') }}">Fertilizers</a>
+			    <a href="{{ url_for('crops') }}">Crop Produce</a>
+				</div>
+			</div>
+			<li><a href="{{ url_for('about') }}" onclick="toggleMenu()">About Us</a></li>
+		</ul>
+	</header>
+      <div class="card" style="margin-top:120px;">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs" >
+            <li class="nav-item">
+              <a class="nav-link " href="{{ url_for('soil') }}">Soil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="{{ url_for('irrigation') }}">Irrigation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="{{ url_for('fertilizers') }}">Fertilizers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ url_for('crops') }}">Crop Produce</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body bg">
+           <div class="tab-content mt-3">
+            <div class="tab-pane active">
+              <p class="card-text font-weight-bolder">India is an agriculturally important country.
+			Two-thirds of its population is engaged in agricultural activities.<br> Agriculture is a primary activity, which produces most of the food that	we consume. Besides food grains, it also produces raw material for various industries.<br><br>
+			Physical diversities and plurality of cultures in India are also reflected in agricultural practices and cropping patterns in the country. <br>Various types of food and fibre crops, vegetables and fruits, spices and condiments, etc. constitute some of the important crops grown in the country. <br>India has three cropping seasons rabi, kharif and zaid.<br><br>
+			Rabi crops are sown in winter from October to December and harvested in summer from April to June. Some of the important rabi crops are <br>wheat, barley, peas, gram and mustard. Availability of precipitation during winter months due to the western temperate cyclones<br> helps in the success of these crops.<br><br>
+			Kharif crops are grown with the onset of monsoon in different parts of the country and these are harvested in September-October. <br>Important crops grown during this season are paddy, maize, jowar, bajra, tur (arhar), moong,urad, cotton, jute, groundnut and soyabean. <br><br>
+			In between the rabi and the kharif seasons, there is a short season during the summer months known as the Zaid season. <br>Some of the crops produced during ‘zaid’ are watermelon, muskmelon anad cucumber.<br><br>
+			The Indian agriculture industry is increasing at a high pace and continuously providing its contribution to world trade. <br><br>
+			Farming varies from subsistence to commercial type. At present, in different parts of India, the following farming systems are practised.<br>
+			- Primitive Subsistence Farming<br>
+			- Intensive Subsistence Farming<br>
+			- Commercial Farming<br><br>
+			A variety of food and non food crops are grown in different parts of the country depending upon the variations in soil, climate and <br>cultivation practices. Major crops grown in India are rice, wheat, millets, pulses, tea, coffee, sugarcane, oil seeds, cotton and jute, etc.</p>
+            </div>
+          </div>
+      </div>
+  </div>
+	<section class="row font-weight-bolder bg2">
+
+		<div class="col-lg-4 col-md-6 col-12 py-5">
+			<img src="{{ url_for('static', filename='farmer.png') }}">
+		</div>
+
+
+		<div class="col-lg-8 col-md-6 col-12 py-5">
+			<h2>5 Most Grown Food Crops</h2>
+			<table class="table table-hover">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Crops</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <th scope="row">1</th>
+			      <td>| Rice</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">2</th>
+			      <td>| Wheat</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">3</th>
+			      <td>| Pulses</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">4</th>
+			      <td>| OilSeeds</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">5</th>
+			      <td>| Sugarcane</td>
+			    </tr>
+			  </tbody>
+			</table>
+			
+			<h2 class="my-4">5 Most Grown Non-Food Crops</h2>
+			<table class="table table-hover">
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Crops</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr>
+			      <th scope="row">1</th>
+			      <td>Tobacco</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">2</th>
+			      <td>Cotton</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">3</th>
+			      <td>Rubber</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">4</th>
+			      <td>Jute</td>
+			    </tr>
+			    <tr>
+			      <th scope="row">5</th>
+			      <td>Hemp</td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+		
+	</section>
+
+	<div class="copyright">
+		<p>Copyright © Team Ode2Code. All Rights Reserved.</p>
+	</div>
+	<script type="text/javascript">
+		window.addEventListener('scroll',function(){
+			var header = document.querySelector('header');
+			header.classList.toggle('sticky',window.scrollY > 0)
+		});
+		function toggleMenu(){
+			var menuToggle = document.querySelector('.toggle');
+			var menu = document.querySelector('.menu');
+			menuToggle.classList.toggle('active');
+			menu.classList.toggle('active');
+		}
+	</script>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
