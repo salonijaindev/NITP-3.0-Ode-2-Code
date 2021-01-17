@@ -21,7 +21,7 @@
  </table>
 <table>
   <tr>
-    <td>Predction Page</td>
+    <td>Prediction Page</td>
      <td>Crop Page</td>
      <td>Information Page</td>
   </tr>
@@ -33,10 +33,10 @@
  </table>
 
 # Video Link
-<a href="url">Video for our presentation</a>
+<a href="url">Video for our Project</a>
 
 # PPT Link
-<a href="url">PPT for our presentation</a>
+<a href="https://drive.google.com/file/d/1Ob0syEef8rIXQRzmAyt5gh5zEkr7zjAW/view?usp=sharing">PPT for our Project</a>
 
 # Model 1
   ## CROP FERTILITY CHECK
