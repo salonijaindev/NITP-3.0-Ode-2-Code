@@ -10,23 +10,35 @@
 <table>
   <tr>
     <td>Home Screen Page</td>
+     <td>After Home Screen</td>
      <td>Landing Page</td>
-     <td>Side Menu Bar</td>
   </tr>
   <tr>
     <td><img src ="Readme Images/app.png" width=270 height=480></td>
+    <td><img src ="Readme Images/after home page.png" width=270 height=480></td>
     <td><img src ="Readme Images/Landing page.png" width=270 height=480></td>
-    <td><img src ="Readme Images/Side menu bar.png" width=270 height=480></td>
   </tr>
  </table>
 <table>
   <tr>
-    <td>Prediction Page</td>
+    <td>Side Menu Bar</td>
+     <td>Prediction Page</td>
+     <td>Crop Page</td>
+  </tr>
+  <tr>
+    <td><img src ="Readme Images/Side menu bar.png" width=270 height=480></td>
+    <td><img src ="Readme Images/Predict.png" width=270 height=480></td>
+    <td><img src ="Readme Images/Crop.png" width=270 height=480></td>
+  </tr>
+ </table>
+ <table>
+  <tr>
+    <td>Information Page</td>
      <td>Crop Page</td>
      <td>Information Page</td>
   </tr>
   <tr>
-    <td><img src ="Readme Images/Predict.png" width=270 height=480></td>
+    <td><img src ="Readme Images/Information.png" width=270 height=480></td>
     <td><img src ="Readme Images/Crop.png" width=270 height=480></td>
     <td><img src ="Readme Images/Information.png" width=270 height=480></td>
   </tr>
