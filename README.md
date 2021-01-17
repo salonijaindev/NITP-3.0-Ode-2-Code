@@ -9,22 +9,28 @@
 
 <table>
   <tr>
-    <td>First Screen Page</td>
-     <td>Holiday Mention</td>
-     <td>Present day in purple and selected day in pink</td>
+    <td>Home Screen Page</td>
+     <td>Landing Page</td>
+     <td>Side Menu Bar</td>
   </tr>
   <tr>
     <td><img src ="Readme Images/app.png" width=270 height=480></td>
     <td><img src ="Readme Images/Landing page.png" width=270 height=480></td>
-    <td><img src ="Readme Images/after home page.png" width=270 height=480></td>
+    <td><img src ="Readme Images/Side menu bar.png" width=270 height=480></td>
   </tr>
  </table>
-
-
-<img src ="Readme Images/Predict.png" height: 50%> 
-<img src ="Readme Images/Side menu bar.png" height: 50%> <img src ="Readme Images/Crop.png" height: 50%>
-<img src ="Readme Images/Information.png" height: 50%> <img src ="Readme Images/Crops.png" height: 50%>
-
+<table>
+  <tr>
+    <td>Predction Page</td>
+     <td>Crop Page</td>
+     <td>Information Page</td>
+  </tr>
+  <tr>
+    <td><img src ="Readme Images/Predict.png" width=270 height=480></td>
+    <td><img src ="Readme Images/Crop.png" width=270 height=480></td>
+    <td><img src ="Readme Images/Information.png" width=270 height=480></td>
+  </tr>
+ </table>
 
 # Video Link
 <a href="url">Video for our presentation</a>
