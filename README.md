@@ -4,6 +4,7 @@
 
 # Website
 <img src ="Readme Images/website.jpeg" style="width: 50%;">
+<img src ="Readme Images/website2.jpeg" style="width: 50%;">
 
 # App Interface
 
@@ -49,6 +50,10 @@
 
 # PPT Link
 <a href="https://drive.google.com/file/d/1Ob0syEef8rIXQRzmAyt5gh5zEkr7zjAW/view?usp=sharing">PPT for our Project</a>
+
+# Adobe xD File
+<a href="https://drive.google.com/file/d/1V7otvA8Z6c54CcwtYFvbloE9Z5CSjd7H/view?usp=sharing">Adobe xD File</a>
+
 
 # Model 1
   ## CROP FERTILITY CHECK
