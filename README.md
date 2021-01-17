@@ -20,3 +20,10 @@
   2. We can check whether the soil is Fertile for growing any kind of crop or not.
   3. The Page is Integrated with ML model having 98% accuracy for predicting the desired results.
   4. The major inputs given to the model through the WebApp are 
+  
+# Model 2
+ ## CROP RECOMMENDATION SYSTEM
+  1. This model aims as Recommending the best suitable crop based on the soil properties.
+  2. Once the Soil Fertility is checked the recommendation system works for recommending crops to the farmer.
+  3. Farmers can get to know about the required conditions and information about the soil.
+  4. It majorly takes inputs such as 
