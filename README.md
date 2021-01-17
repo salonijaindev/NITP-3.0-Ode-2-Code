@@ -6,7 +6,7 @@
 <img src ="Readme Images/website.jpeg" style="width: 50%;">
 
 # App Interface
-<img src ="Readme Images/Home.png" width= 350>
+<img src ="Readme Images/app.png" width= 350>
 
 # Video Link
 <a href="url">Video for our presentation</a>
