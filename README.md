@@ -45,7 +45,7 @@
  </table>
 
 # Video Link
-<a href="url">Video for our Project</a>
+<a href="https://youtu.be/umPybqtlLNg">Video for our Project</a>
 
 # PPT Link
 <a href="https://drive.google.com/file/d/1Ob0syEef8rIXQRzmAyt5gh5zEkr7zjAW/view?usp=sharing">PPT for our Project</a>
