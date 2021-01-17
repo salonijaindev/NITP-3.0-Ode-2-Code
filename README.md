@@ -6,7 +6,11 @@
 <img src ="Readme Images/website.jpeg" style="width: 50%;">
 
 # App Interface
-<img src ="Readme Images/app.png" width= 350>
+<img src ="Readme Images/app.png" height: 50%> <img src ="Readme Images/Landing page.png" height: 50%>
+<img src ="Readme Images/after home page.png" height: 50%> <img src ="Readme Images/Predict.png" height: 50%> 
+<img src ="Readme Images/Side menu bar.png" height: 50%> <img src ="Readme Images/Crop.png" height: 50%>
+<img src ="Readme Images/Information.png" height: 50%> <img src ="Readme Images/Crops.png" height: 50%>
+
 
 # Video Link
 <a href="url">Video for our presentation</a>
