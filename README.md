@@ -35,13 +35,13 @@
  <table>
   <tr>
     <td>Information Page</td>
-     <td>Crop Page</td>
-     <td>Information Page</td>
+     <td>Single Crop Description</td>
+     <td>About Us Page</td>
   </tr>
   <tr>
     <td><img src ="Readme Images/Information.png" width=270 height=480></td>
-    <td><img src ="Readme Images/Crop.png" width=270 height=480></td>
-    <td><img src ="Readme Images/Information.png" width=270 height=480></td>
+    <td><img src ="Readme Images/Crops.png" width=270 height=480></td>
+    <td><img src ="Readme Images/About.png" width=270 height=480></td>
   </tr>
  </table>
 
